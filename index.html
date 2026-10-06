@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! 💙✨</title>
+    <title>Happy Birthday Zoe! 💙✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -311,13 +311,13 @@
     <canvas id="bgCanvas"></canvas>
 
     <div class="card">
-        <h1>Happy Birthday! 💙</h1>
-        <p class="subtitle">✨ Special Celebration ✨</p>
+        <h1>Happy Birthday, Zoe! 💙</h1>
+        <p class="subtitle">✨ To My Special Someone ✨</p>
 
         <!-- Main Photo Frame -->
         <div class="photo-container">
             <div class="photo-frame">
-                <img src="photo.jpg" alt="Birthday Girl" id="profileImg" onerror="this.src='https://via.placeholder.com/200/0f172a/38bdf8?text=Zoe'">
+                <img src="photo.jpg" alt="Zoe" id="profileImg" onerror="this.src='https://via.placeholder.com/200/0f172a/38bdf8?text=Zoe'">
             </div>
         </div>
 
@@ -329,11 +329,11 @@
             <div class="time-box"><span id="secs">00</span><label>Secs</label></div>
         </div>
 
-        <!-- Blank Main Message Box -->
+        <!-- Taglish Main Message Box -->
         <div class="message-box">
-            <p><strong>Dear [Ngalan / Nickname],</strong></p><br>
-            <p>[ Ibutang diri ang imong sweet nga mensahe sa iyaha... ]</p><br>
-            <p>[ Pwede nimo dugangan og nindot nga wishes o mga paboritong alaala ninyo! ]</p>
+            <p><strong>Hey Zoe,</strong></p><br>
+            <p>I just wanted to make this special day a little more memorable for you. Happy, happy birthday! 🎉 I'm honestly super super grateful to have you in my life.</p><br>
+            <p>Sobrang thankful ako kasi naging part ka ng world ko. Keep shining, stay pretty, and always remember that I'm always here for you no matter what! ✨💙</p>
         </div>
 
         <!-- 5 Interactive Surprise Icons -->
@@ -445,7 +445,7 @@
                 document.getElementById('secs').innerText = "00";
                 
                 const countdownBox = document.querySelector('.countdown-container');
-                countdownBox.innerHTML = "<h2 style='color:#38bdf8; animation: pulse 1s infinite;'>🎉 IT'S YOUR SPECIAL DAY! HAPPY BIRTHDAY! 🎉</h2>";
+                countdownBox.innerHTML = "<h2 style='color:#38bdf8; animation: pulse 1s infinite;'>🎉 HAPPY BIRTHDAY ZOE! IT'S YOUR DAY! 🎉</h2>";
                 return;
             }
 
@@ -462,32 +462,32 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // --- Data para sa 5 Ka Icon Popups ---
+        // --- Data para sa 5 Ka Icon Popups (Taglish Messages for Zoe) ---
         const surprises = {
             1: {
-                title: "🎁 Daily Reminder",
+                title: "🎁 Friendly Reminder for Zoe",
                 image: "pic1.jpg",
-                text: "Kanunay ka mag-ingat ug mag-smile kada adlaw ha? Ang imong pahiyom maoy magpahayag sa akong adlaw! 😊💙"
+                text: "Zoe, don't forget to take care of yourself everyday ha? Your smile literally brightens up my whole day! 😊💙"
             },
             2: {
-                title: "💌 Advice For You",
+                title: "💌 A Little Advice",
                 image: "pic2.jpg",
-                text: "Ayaw kalimot sa pag-pahuway kon kapoy na. Bright kaayo ka nga tao ug proud kaayo ko nimo kanunay! ✨"
+                text: "Kapag napapagod ka na, rest ka lang okay? You're doing amazing as always, and super proud ako sa lahat ng achievements mo! ✨"
             },
             3: {
-                title: "🌟 Sweet Note",
+                title: "🌟 Sweet Secret",
                 image: "pic3.jpg",
-                text: "Usa ka sa pinaka-special nga nahitabo sa akong kinabuhi. Salamat kaayo nga naa ka! 🌌"
+                text: "Honestly Zoe, meeting you was one of the best things that ever happened to me. So happy to have you! 🌌"
             },
             4: {
-                title: "👑 You Are Special",
+                title: "👑 To My Queen",
                 image: "pic4.jpg",
-                text: "Treat yourself like a queen today because you deserve all the happiness in the world! 👸💙"
+                text: "Treat yourself like a queen today, Zoe, because you deserve all the love, peace, and happiness in the world! 👸💙"
             },
             5: {
-                title: "🎈 Birthday Wish",
+                title: "🎈 My Wish For You",
                 image: "pic5.jpg",
-                text: "Hinaot nga matuman tanan nimo nga mga gipangandoy niining tuiga. Naa ra ko dire kanunay para mosuporta nimo! 🎉"
+                text: "I wish that all your secret dreams come true this year! Don't worry, cheer: cheerleader mo ako forever! 🎉"
             }
         };
 
@@ -499,7 +499,7 @@
             const imgElem = document.getElementById('modalImg');
             imgElem.src = data.image;
             imgElem.onerror = function() {
-                this.src = 'https://via.placeholder.com/400x250/0f172a/38bdf8?text=Image+' + id;
+                this.src = 'https://via.placeholder.com/400x250/0f172a/38bdf8?text=Zoe+' + id;
             };
 
             document.getElementById('modalImgContainer').style.display = 'block';
@@ -510,9 +510,9 @@
 
         // --- Open Main Surprise Button ---
         function openSurprise() {
-            document.getElementById('modalTitle').innerText = "💙 A Special Question 💙";
+            document.getElementById('modalTitle').innerText = "💙 A Very Important Question 💙";
             document.getElementById('modalImgContainer').style.display = 'none';
-            document.getElementById('modalText').innerHTML = "<strong>Unsa man... ready na ba ka nga i-official na nato ni human sa imong birthday? 🙈💙</strong>";
+            document.getElementById('modalText').innerHTML = "<strong>Zoe, ready ka na ba na i-official na natin 'to right after your birthday? 🙈💙</strong>";
             document.getElementById('surpriseModal').style.display = 'flex';
             burstBlueHearts();
         }
