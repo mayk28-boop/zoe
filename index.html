@@ -40,12 +40,12 @@
         .card {
             position: relative;
             z-index: 10;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 24px;
-            padding: 40px 30px;
+            padding: 35px 25px;
             max-width: 520px;
             width: 100%;
             text-align: center;
@@ -62,7 +62,7 @@
         /* Title with Electric Blue Gradient */
         h1 {
             font-weight: 700;
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -78,18 +78,18 @@
             text-transform: uppercase;
         }
 
-        /* Animated Glow Main Photo Frame */
+        /* Full Aspect Ratio Photo Frame Container */
         .photo-container {
             position: relative;
-            width: 180px;
-            height: 180px;
+            width: 100%;
+            max-width: 320px;
             margin: 0 auto 25px auto;
-            border-radius: 50%;
-            padding: 5px;
+            border-radius: 20px;
+            padding: 4px;
             background: linear-gradient(45deg, #0284c7, #38bdf8, #6366f1, #38bdf8);
             background-size: 300% 300%;
             animation: gradientRotate 4s ease infinite;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
         }
 
         @keyframes gradientRotate {
@@ -100,21 +100,26 @@
 
         .photo-frame {
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
+            border-radius: 16px;
             overflow: hidden;
             background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .photo-frame img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 380px;
+            object-fit: contain; /* Full Ratio - No Cropping! */
+            display: block;
+            border-radius: 16px;
             transition: transform 0.5s ease;
         }
 
         .photo-container:hover img {
-            transform: scale(1.08);
+            transform: scale(1.03);
         }
 
         /* Countdown Box */
@@ -146,7 +151,7 @@
             text-transform: uppercase;
         }
 
-        /* Message Box */
+        /* Taglish Message Box */
         .message-box {
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid rgba(56, 189, 248, 0.2);
@@ -162,7 +167,7 @@
 
         /* Interactive Surprise Icons Section */
         .icons-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #38bdf8;
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -230,7 +235,7 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 6, 23, 0.85);
+            background: rgba(2, 6, 23, 0.88);
             backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
@@ -242,8 +247,8 @@
             background: #0f172a;
             border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 20px;
-            padding: 25px;
-            max-width: 420px;
+            padding: 22px;
+            max-width: 440px;
             width: 100%;
             text-align: center;
             box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
@@ -257,23 +262,29 @@
 
         .modal h2 {
             color: #38bdf8;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
 
+        /* Full Aspect Ratio Modal Image Container */
         .modal-img-container {
             width: 100%;
-            max-height: 250px;
             border-radius: 14px;
             overflow: hidden;
             margin-bottom: 15px;
             border: 2px solid rgba(56, 189, 248, 0.3);
+            background: #090d16;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .modal-img-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain; /* Full Ratio - No Cropping! */
+            display: block;
         }
 
         .modal-body {
@@ -314,10 +325,10 @@
         <h1>Happy Birthday, Zoe! 💙</h1>
         <p class="subtitle">✨ To My Special Someone ✨</p>
 
-        <!-- Main Photo Frame -->
+        <!-- Main Photo Frame (Full Aspect Ratio) -->
         <div class="photo-container">
             <div class="photo-frame">
-                <img src="photo.jpg" alt="Zoe" id="profileImg" onerror="this.src='https://via.placeholder.com/200/0f172a/38bdf8?text=Zoe'">
+                <img src="photo.jpg" alt="Zoe" id="profileImg" onerror="this.src='https://via.placeholder.com/400x400/0f172a/38bdf8?text=Zoe'">
             </div>
         </div>
 
@@ -487,7 +498,7 @@
             5: {
                 title: "🎈 My Wish For You",
                 image: "pic5.jpg",
-                text: "I wish that all your secret dreams come true this year! Don't worry, cheer: cheerleader mo ako forever! 🎉"
+                text: "I wish that all your secret dreams come true this year! Don't worry, cheerleader mo ako forever! 🎉"
             }
         };
 
@@ -499,10 +510,10 @@
             const imgElem = document.getElementById('modalImg');
             imgElem.src = data.image;
             imgElem.onerror = function() {
-                this.src = 'https://via.placeholder.com/400x250/0f172a/38bdf8?text=Zoe+' + id;
+                this.src = 'https://via.placeholder.com/400x300/0f172a/38bdf8?text=Zoe+' + id;
             };
 
-            document.getElementById('modalImgContainer').style.display = 'block';
+            document.getElementById('modalImgContainer').style.display = 'flex';
             document.getElementById('modalText').innerText = data.text;
             document.getElementById('surpriseModal').style.display = 'flex';
             burstBlueHearts();
