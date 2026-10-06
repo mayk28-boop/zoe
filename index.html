@@ -40,7 +40,7 @@
         .card {
             position: relative;
             z-index: 10;
-            background: rgba(15, 23, 42, 0.75);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(56, 189, 248, 0.25);
@@ -78,11 +78,11 @@
             text-transform: uppercase;
         }
 
-        /* Animated Glow Photo Frame */
+        /* Animated Glow Main Photo Frame */
         .photo-container {
             position: relative;
-            width: 190px;
-            height: 190px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 25px auto;
             border-radius: 50%;
             padding: 5px;
@@ -160,6 +160,48 @@
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        /* Interactive Surprise Icons Section */
+        .icons-title {
+            font-size: 0.9rem;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .icons-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 15px 10px;
+            border-radius: 18px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .icon-btn {
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: rgba(15, 23, 42, 0.8);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-5px) scale(1.15);
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+            background: rgba(56, 189, 248, 0.2);
+        }
+
         /* Glowing Action Button */
         .btn {
             background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
@@ -183,7 +225,7 @@
             background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
         }
 
-        /* Modal / Surprise Overlay */
+        /* Modal Overlay */
         .modal {
             display: none;
             position: fixed;
@@ -200,7 +242,7 @@
             background: #0f172a;
             border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px;
             max-width: 420px;
             width: 100%;
             text-align: center;
@@ -216,18 +258,34 @@
         .modal h2 {
             color: #38bdf8;
             margin-bottom: 15px;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+        }
+
+        .modal-img-container {
+            width: 100%;
+            max-height: 250px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .modal-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .modal-body {
-            color: #94a3b8;
+            color: #e2e8f0;
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 25px;
-            text-align: left;
+            margin-bottom: 20px;
+            text-align: center;
             background: rgba(30, 41, 59, 0.5);
             padding: 15px;
             border-radius: 12px;
+            border-left: 3px solid #38bdf8;
         }
 
         .close-btn {
@@ -256,14 +314,14 @@
         <h1>Happy Birthday! 💙</h1>
         <p class="subtitle">✨ Special Celebration ✨</p>
 
-        <!-- Photo Frame (I-upload ang 'photo.jpg' sa GitHub) -->
+        <!-- Main Photo Frame -->
         <div class="photo-container">
             <div class="photo-frame">
                 <img src="photo.jpg" alt="Birthday Girl" id="profileImg" onerror="this.src='https://via.placeholder.com/200/0f172a/38bdf8?text=Zoe'">
             </div>
         </div>
 
-        <!-- Live Countdown Timer to Oct 8 -->
+        <!-- Live Countdown Timer -->
         <div class="countdown-container">
             <div class="time-box"><span id="days">00</span><label>Days</label></div>
             <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
@@ -271,30 +329,42 @@
             <div class="time-box"><span id="secs">00</span><label>Secs</label></div>
         </div>
 
-        <!-- Blank Message Box -->
+        <!-- Blank Main Message Box -->
         <div class="message-box">
-            <!-- ✏️ BUTANGI DIRI SA IMONG MENSAHE -->
             <p><strong>Dear [Ngalan / Nickname],</strong></p><br>
             <p>[ Ibutang diri ang imong sweet nga mensahe sa iyaha... ]</p><br>
             <p>[ Pwede nimo dugangan og nindot nga wishes o mga paboritong alaala ninyo! ]</p>
         </div>
 
+        <!-- 5 Interactive Surprise Icons -->
+        <p class="icons-title">✨ Click the icons for surprises! ✨</p>
+        <div class="icons-grid">
+            <div class="icon-btn" onclick="openIconModal(1)">🎁</div>
+            <div class="icon-btn" onclick="openIconModal(2)">💌</div>
+            <div class="icon-btn" onclick="openIconModal(3)">🌟</div>
+            <div class="icon-btn" onclick="openIconModal(4)">👑</div>
+            <div class="icon-btn" onclick="openIconModal(5)">🎈</div>
+        </div>
+
         <button class="btn" onclick="openSurprise()">
-            <span>Pindota para sa Surprise!</span> 🎁
+            <span>Grand Birthday Surprise!</span> 🎁
         </button>
     </div>
 
-    <!-- Surprise Modal Overlay -->
+    <!-- Modal for Icon Popups & Main Surprise -->
     <div class="modal" id="surpriseModal">
         <div class="modal-content">
-            <h2>💙 A Special Note 💙</h2>
+            <h2 id="modalTitle">💙 Surprise Note 💙</h2>
             
-            <div class="modal-body">
-                <!-- ✏️ BUTANGI DIRI SA IMONG SURPRISE MESSAGE / QUESTION -->
-                <p>[ Ibutang diri ang imong surprise question o extra message para sa iyaha! ]</p>
+            <div class="modal-img-container" id="modalImgContainer">
+                <img id="modalImg" src="" alt="Surprise Image">
             </div>
 
-            <button class="close-btn" onclick="closeSurprise()">Close / Close with Love 💕</button>
+            <div class="modal-body" id="modalText">
+                <!-- Text changes dynamically -->
+            </div>
+
+            <button class="close-btn" onclick="closeSurprise()">Close with Love 💕</button>
         </div>
     </div>
 
@@ -366,10 +436,6 @@
             let currentYear = now.getFullYear();
             let targetDate = new Date(`October 8, ${currentYear} 00:00:00`);
 
-            if (now > targetDate && now.getMonth() === 9 && now.getDate() > 8) {
-                targetDate = new Date(`October 8, ${currentYear + 1} 00:00:00`);
-            }
-
             const diff = targetDate - now;
 
             if (diff <= 0) {
@@ -377,6 +443,9 @@
                 document.getElementById('hours').innerText = "00";
                 document.getElementById('mins').innerText = "00";
                 document.getElementById('secs').innerText = "00";
+                
+                const countdownBox = document.querySelector('.countdown-container');
+                countdownBox.innerHTML = "<h2 style='color:#38bdf8; animation: pulse 1s infinite;'>🎉 IT'S YOUR SPECIAL DAY! HAPPY BIRTHDAY! 🎉</h2>";
                 return;
             }
 
@@ -393,8 +462,57 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // --- Surprise Modal & Blue Sparkles Burst ---
+        // --- Data para sa 5 Ka Icon Popups ---
+        const surprises = {
+            1: {
+                title: "🎁 Daily Reminder",
+                image: "pic1.jpg",
+                text: "Kanunay ka mag-ingat ug mag-smile kada adlaw ha? Ang imong pahiyom maoy magpahayag sa akong adlaw! 😊💙"
+            },
+            2: {
+                title: "💌 Advice For You",
+                image: "pic2.jpg",
+                text: "Ayaw kalimot sa pag-pahuway kon kapoy na. Bright kaayo ka nga tao ug proud kaayo ko nimo kanunay! ✨"
+            },
+            3: {
+                title: "🌟 Sweet Note",
+                image: "pic3.jpg",
+                text: "Usa ka sa pinaka-special nga nahitabo sa akong kinabuhi. Salamat kaayo nga naa ka! 🌌"
+            },
+            4: {
+                title: "👑 You Are Special",
+                image: "pic4.jpg",
+                text: "Treat yourself like a queen today because you deserve all the happiness in the world! 👸💙"
+            },
+            5: {
+                title: "🎈 Birthday Wish",
+                image: "pic5.jpg",
+                text: "Hinaot nga matuman tanan nimo nga mga gipangandoy niining tuiga. Naa ra ko dire kanunay para mosuporta nimo! 🎉"
+            }
+        };
+
+        // --- Open Modal for Icons ---
+        function openIconModal(id) {
+            const data = surprises[id];
+            document.getElementById('modalTitle').innerText = data.title;
+            
+            const imgElem = document.getElementById('modalImg');
+            imgElem.src = data.image;
+            imgElem.onerror = function() {
+                this.src = 'https://via.placeholder.com/400x250/0f172a/38bdf8?text=Image+' + id;
+            };
+
+            document.getElementById('modalImgContainer').style.display = 'block';
+            document.getElementById('modalText').innerText = data.text;
+            document.getElementById('surpriseModal').style.display = 'flex';
+            burstBlueHearts();
+        }
+
+        // --- Open Main Surprise Button ---
         function openSurprise() {
+            document.getElementById('modalTitle').innerText = "💙 A Special Question 💙";
+            document.getElementById('modalImgContainer').style.display = 'none';
+            document.getElementById('modalText').innerHTML = "<strong>Unsa man... ready na ba ka nga i-official na nato ni human sa imong birthday? 🙈💙</strong>";
             document.getElementById('surpriseModal').style.display = 'flex';
             burstBlueHearts();
         }
@@ -403,9 +521,10 @@
             document.getElementById('surpriseModal').style.display = 'none';
         }
 
+        // --- Burst Animation ---
         function burstBlueHearts() {
             const symbols = ['💙', '✨', '💎', '🌊', '❄️'];
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 25; i++) {
                 setTimeout(() => {
                     const elem = document.createElement('div');
                     elem.innerText = symbols[Math.floor(Math.random() * symbols.length)];
