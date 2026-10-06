@@ -2,7 +2,7 @@
 <html lang="ceb">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy Birthday Zoe! 💙✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             overflow-x: hidden;
             position: relative;
         }
@@ -45,7 +45,7 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 24px;
-            padding: 35px 25px;
+            padding: 35px 20px;
             max-width: 520px;
             width: 100%;
             text-align: center;
@@ -59,21 +59,64 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
+        /* Creator Tag - Glowing "by cid" Badge */
+        .creator-tag {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
+            animation: rainbowGlow 3s linear infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            z-index: 20;
+        }
+
+        @keyframes rainbowGlow {
+            0% {
+                color: #38bdf8;
+                border-color: #38bdf8;
+                box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+            }
+            33% {
+                color: #c084fc;
+                border-color: #c084fc;
+                box-shadow: 0 0 8px rgba(192, 132, 252, 0.6);
+            }
+            66% {
+                color: #f472b6;
+                border-color: #f472b6;
+                box-shadow: 0 0 8px rgba(244, 114, 182, 0.6);
+            }
+            100% {
+                color: #38bdf8;
+                border-color: #38bdf8;
+                box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+            }
+        }
+
         /* Title with Electric Blue Gradient */
         h1 {
             font-weight: 700;
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
+            margin-top: 10px;
+            margin-bottom: 6px;
             text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
         .subtitle {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #94a3b8;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -82,8 +125,8 @@
         .photo-container {
             position: relative;
             width: 100%;
-            max-width: 320px;
-            margin: 0 auto 25px auto;
+            max-width: 300px;
+            margin: 0 auto 22px auto;
             border-radius: 20px;
             padding: 4px;
             background: linear-gradient(45deg, #0284c7, #38bdf8, #6366f1, #38bdf8);
@@ -111,42 +154,40 @@
         .photo-frame img {
             width: 100%;
             height: auto;
-            max-height: 380px;
-            object-fit: contain; /* Full Ratio - No Cropping! */
+            max-height: 360px;
+            object-fit: contain;
             display: block;
             border-radius: 16px;
             transition: transform 0.5s ease;
         }
 
-        .photo-container:hover img {
-            transform: scale(1.03);
-        }
-
-        /* Countdown Box */
+        /* Countdown Box - Fully Responsive */
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 22px;
+            width: 100%;
         }
 
         .time-box {
             background: rgba(30, 41, 59, 0.8);
             border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 12px;
-            padding: 10px 14px;
-            min-width: 65px;
+            padding: 8px 10px;
+            flex: 1;
+            max-width: 75px;
         }
 
         .time-box span {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #38bdf8;
         }
 
         .time-box label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #94a3b8;
             text-transform: uppercase;
         }
@@ -156,18 +197,18 @@
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 18px;
+            margin-bottom: 22px;
             text-align: left;
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
             color: #cbd5e1;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Interactive Surprise Icons Section */
+        /* Interactive Surprise Icons Section - Mobile Optimized */
         .icons-title {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #38bdf8;
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -177,34 +218,37 @@
 
         .icons-grid {
             display: flex;
-            justify-content: space-around;
-            margin-bottom: 25px;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap; /* Prevents icons from being squished on smaller screens */
+            margin-bottom: 22px;
             background: rgba(30, 41, 59, 0.5);
-            padding: 15px 10px;
+            padding: 14px 10px;
             border-radius: 18px;
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .icon-btn {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
-            background: rgba(15, 23, 42, 0.8);
-            width: 50px;
-            height: 50px;
+            background: rgba(15, 23, 42, 0.85);
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             border: 1px solid rgba(56, 189, 248, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.25s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .icon-btn:hover {
-            transform: translateY(-5px) scale(1.15);
+        .icon-btn:active, .icon-btn:hover {
+            transform: scale(1.15);
             border-color: #38bdf8;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
-            background: rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.25);
         }
 
         /* Glowing Action Button */
@@ -212,8 +256,8 @@
             background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
             color: #ffffff;
             border: none;
-            padding: 14px 32px;
-            font-size: 1rem;
+            padding: 13px 28px;
+            font-size: 0.95rem;
             font-weight: 600;
             border-radius: 30px;
             cursor: pointer;
@@ -221,11 +265,15 @@
             box-shadow: 0 4px 20px rgba(2, 132, 199, 0.5);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
+            width: 100%;
+            max-width: 320px;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .btn:hover {
-            transform: translateY(-3px) scale(1.03);
+        .btn:hover, .btn:active {
+            transform: translateY(-2px) scale(1.02);
             box-shadow: 0 8px 30px rgba(56, 189, 248, 0.7);
             background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
         }
@@ -240,19 +288,21 @@
             justify-content: center;
             align-items: center;
             z-index: 100;
-            padding: 20px;
+            padding: 15px;
         }
 
         .modal-content {
             background: #0f172a;
             border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 20px;
-            padding: 22px;
-            max-width: 440px;
+            padding: 20px 18px;
+            max-width: 420px;
             width: 100%;
             text-align: center;
             box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
-            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: modalPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes modalPop {
@@ -263,10 +313,9 @@
         .modal h2 {
             color: #38bdf8;
             margin-bottom: 12px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
-        /* Full Aspect Ratio Modal Image Container */
         .modal-img-container {
             width: 100%;
             border-radius: 14px;
@@ -282,19 +331,19 @@
         .modal-img-container img {
             width: 100%;
             height: auto;
-            max-height: 350px;
-            object-fit: contain; /* Full Ratio - No Cropping! */
+            max-height: 280px;
+            object-fit: contain;
             display: block;
         }
 
         .modal-body {
             color: #e2e8f0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
             text-align: center;
             background: rgba(30, 41, 59, 0.5);
-            padding: 15px;
+            padding: 12px;
             border-radius: 12px;
             border-left: 3px solid #38bdf8;
         }
@@ -303,16 +352,27 @@
             background: #1e293b;
             color: #38bdf8;
             border: 1px solid #38bdf8;
-            padding: 10px 24px;
+            padding: 9px 22px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
         }
 
-        .close-btn:hover {
+        .close-btn:hover, .close-btn:active {
             background: #38bdf8;
             color: #0f172a;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 30px 15px; }
+            .icons-grid { gap: 8px; padding: 10px 5px; }
+            .icon-btn { width: 44px; height: 44px; font-size: 1.4rem; }
+            .time-box { padding: 6px 4px; }
+            .time-box span { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -322,10 +382,13 @@
     <canvas id="bgCanvas"></canvas>
 
     <div class="card">
+        <!-- Glowing Creator Credit Tag -->
+        <div class="creator-tag">✨ by cid</div>
+
         <h1>Happy Birthday, Zoe! 💙</h1>
         <p class="subtitle">✨ To My Special Someone ✨</p>
 
-        <!-- Main Photo Frame (Full Aspect Ratio) -->
+        <!-- Main Photo Frame -->
         <div class="photo-container">
             <div class="photo-frame">
                 <img src="photo.jpg" alt="Zoe" id="profileImg" onerror="this.src='https://via.placeholder.com/400x400/0f172a/38bdf8?text=Zoe'">
@@ -425,7 +488,7 @@
 
         function initParticles() {
             particles = [];
-            for (let i = 0; i < 70; i++) {
+            for (let i = 0; i < 60; i++) {
                 particles.push(new Particle());
             }
         }
@@ -456,7 +519,7 @@
                 document.getElementById('secs').innerText = "00";
                 
                 const countdownBox = document.querySelector('.countdown-container');
-                countdownBox.innerHTML = "<h2 style='color:#38bdf8; animation: pulse 1s infinite;'>🎉 HAPPY BIRTHDAY ZOE! IT'S YOUR DAY! 🎉</h2>";
+                countdownBox.innerHTML = "<h2 style='color:#38bdf8; font-size:1.1rem; animation: pulse 1s infinite;'>🎉 HAPPY BIRTHDAY ZOE! IT'S YOUR DAY! 🎉</h2>";
                 return;
             }
 
@@ -473,7 +536,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // --- Data para sa 5 Ka Icon Popups (Taglish Messages for Zoe) ---
+        // --- Data para sa 5 Ka Icon Popups ---
         const surprises = {
             1: {
                 title: "🎁 Friendly Reminder for Zoe",
@@ -535,14 +598,14 @@
         // --- Burst Animation ---
         function burstBlueHearts() {
             const symbols = ['💙', '✨', '💎', '🌊', '❄️'];
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 22; i++) {
                 setTimeout(() => {
                     const elem = document.createElement('div');
                     elem.innerText = symbols[Math.floor(Math.random() * symbols.length)];
                     elem.style.position = 'fixed';
                     elem.style.left = Math.random() * 100 + 'vw';
                     elem.style.top = '100vh';
-                    elem.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    elem.style.fontSize = (Math.random() * 18 + 18) + 'px';
                     elem.style.zIndex = '999';
                     elem.style.transition = 'all 3s linear';
                     elem.style.pointerEvents = 'none';
