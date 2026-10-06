@@ -220,8 +220,7 @@
             display: flex;
             justify-content: center;
             gap: 12px;
-            flex-wrap: wrap; /* Prevents icons from being squished on smaller screens */
-            margin-bottom: 22px;
+            flex-wrap: wrap;
             background: rgba(30, 41, 59, 0.5);
             padding: 14px 10px;
             border-radius: 18px;
@@ -249,33 +248,6 @@
             border-color: #38bdf8;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
             background: rgba(56, 189, 248, 0.25);
-        }
-
-        /* Glowing Action Button */
-        .btn {
-            background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-            color: #ffffff;
-            border: none;
-            padding: 13px 28px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.5);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            max-width: 320px;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .btn:hover, .btn:active {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.7);
-            background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
         }
 
         /* Modal Overlay */
@@ -406,8 +378,8 @@
         <!-- Taglish Main Message Box -->
         <div class="message-box">
             <p><strong>Hey Zoe,</strong></p><br>
-            <p>I just wanted to make this special day a little more memorable for you. Advance Happy, happy birthday! 🎉 I'm honestly super super grateful to have you in my life.</p><br>
-            <p>Sobrang thankful ako kasi naging part ka ng buhay ko. kahit minsan HAHAAH alam mo na, Keep shining, stay pretty, and always remember that I'm always here for you no matter what! ✨💙</p>
+            <p>I just wanted to make this special day a little more memorable for you. Happy, happy birthday! 🎉 I'm honestly super super grateful to have you in my life.</p><br>
+            <p>Sobrang thankful ako kasi naging part ka ng world ko. Keep shining, stay pretty, and always remember that I'm always here for you no matter what! ✨💙</p>
         </div>
 
         <!-- 5 Interactive Surprise Icons -->
@@ -419,13 +391,9 @@
             <div class="icon-btn" onclick="openIconModal(4)">👑</div>
             <div class="icon-btn" onclick="openIconModal(5)">🎈</div>
         </div>
-
-        <button class="btn" onclick="openSurprise()">
-            <span>Grand Birthday Surprise!</span> 🎁
-        </button>
     </div>
 
-    <!-- Modal for Icon Popups & Main Surprise -->
+    <!-- Modal for Icon Popups -->
     <div class="modal" id="surpriseModal">
         <div class="modal-content">
             <h2 id="modalTitle">💙 Surprise Note 💙</h2>
@@ -578,15 +546,6 @@
 
             document.getElementById('modalImgContainer').style.display = 'flex';
             document.getElementById('modalText').innerText = data.text;
-            document.getElementById('surpriseModal').style.display = 'flex';
-            burstBlueHearts();
-        }
-
-        // --- Open Main Surprise Button ---
-        function openSurprise() {
-            document.getElementById('modalTitle').innerText = "💙 A Very Important Question 💙";
-            document.getElementById('modalImgContainer').style.display = 'none';
-            document.getElementById('modalText').innerHTML = "<strong>Zoe, ready ka na ba na i-official na natin 'to right after your birthday? 🙈💙</strong>";
             document.getElementById('surpriseModal').style.display = 'flex';
             burstBlueHearts();
         }
