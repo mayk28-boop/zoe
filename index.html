@@ -37,7 +37,7 @@
             pointer-events: none;
         }
 
-        /* Glassmorphism Card with Pulse Animation */
+        /* Glassmorphism Card */
         .card {
             position: relative;
             z-index: 10;
@@ -111,7 +111,7 @@
             text-transform: uppercase;
         }
 
-        /* Full Aspect Ratio Photo Frame Container */
+        /* Photo Frame Container */
         .photo-container {
             position: relative;
             width: 100%;
@@ -148,10 +148,9 @@
             object-fit: contain;
             display: block;
             border-radius: 16px;
-            transition: transform 0.5s ease;
         }
 
-        /* Countdown Box - Fully Responsive */
+        /* Countdown Box */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -170,11 +169,6 @@
             transition: transform 0.3s;
         }
 
-        .time-box:hover {
-            transform: translateY(-3px);
-            border-color: #38bdf8;
-        }
-
         .time-box span {
             display: block;
             font-size: 1.25rem;
@@ -188,27 +182,18 @@
             text-transform: uppercase;
         }
 
-        /* Custom Cool Taglish Message Box */
+        /* Main Message Box */
         .message-box {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 18px;
-            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 18px;
             margin-bottom: 22px;
             text-align: left;
-            line-height: 1.65;
-            font-size: 0.92rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
             color: #cbd5e1;
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .message-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(to bottom, #38bdf8, #818cf8);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Interactive Surprise Icons Section */
@@ -277,9 +262,26 @@
             width: 100%;
             text-align: center;
             box-shadow: 0 0 45px rgba(56, 189, 248, 0.4);
-            animation: modalPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             max-height: 90vh;
             overflow-y: auto;
+        }
+
+        /* Countdown Finish Super Cool Modal Animation */
+        .countdown-finish-modal {
+            border: 2px solid #38bdf8 !important;
+            animation: epicPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), modalGlow 2s infinite alternate !important;
+        }
+
+        @keyframes epicPop {
+            0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
+            70% { transform: scale(1.08) rotate(3deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes modalGlow {
+            0% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.4); }
+            100% { box-shadow: 0 0 60px rgba(56, 189, 248, 0.9), 0 0 20px rgba(192, 132, 252, 0.6); }
         }
 
         @keyframes modalPop {
@@ -290,7 +292,7 @@
         .modal h2 {
             color: #38bdf8;
             margin-bottom: 12px;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
         }
 
         .modal-img-container {
@@ -315,12 +317,12 @@
 
         .modal-body {
             color: #e2e8f0;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
             margin-bottom: 18px;
-            text-align: center;
-            background: rgba(30, 41, 59, 0.5);
-            padding: 12px;
+            text-align: left;
+            background: rgba(30, 41, 59, 0.6);
+            padding: 14px;
             border-radius: 12px;
             border-left: 3px solid #38bdf8;
         }
@@ -355,11 +357,11 @@
 </head>
 <body>
 
-    <!-- Canvas Background for Live Floating Sparkles & Hearts -->
+    <!-- Canvas Background -->
     <canvas id="bgCanvas"></canvas>
 
     <div class="card">
-        <!-- Glowing Creator Credit Tag -->
+        <!-- Glowing Creator Tag -->
         <div class="creator-tag">✨ by cid</div>
 
         <h1>Happy Birthday, Zoe! 💙</h1>
@@ -380,11 +382,11 @@
             <div class="time-box"><span id="secs">00</span><label>Secs</label></div>
         </div>
 
-        <!-- Custom Taglish Message Box -->
+        <!-- Main Message Box -->
         <div class="message-box">
-            <p><strong>Happy Birthday, Zoe! 🎉</strong></p><br>
-            <p>Naisip ko sanang gumawa ng super dramatic na greeting, kaso naisip ko, simpleng pagkakaroon pa lang sa'yo sa araw-araw ko, sapat na para maging maganda ang day ko. Dijoke HAHAHA, pero totoo! 😄✨</p><br>
-            <p>I’m just super grateful for you. You somehow always find a way to cross my mind, and I love that. I hope this year brings you all the happiness and success you deserve. Stay pretty, and remember na cheerleader mo ako palagi. Enjoy your day! 💙</p>
+            <p><strong>Hey Zoe,</strong></p><br>
+            <p>I just wanted to make this special day a little more memorable for you. Happy, happy birthday! 🎉 I'm honestly super super grateful to have you in my life.</p><br>
+            <p>Sobrang thankful ako kasi naging part ka ng world ko. Keep shining, stay pretty, and always remember that I'm always here for you no matter what! ✨💙</p>
         </div>
 
         <!-- 5 Interactive Surprise Icons -->
@@ -398,9 +400,9 @@
         </div>
     </div>
 
-    <!-- Modal for Icon Popups -->
+    <!-- Modal for Icon Popups and Birthday Surprise -->
     <div class="modal" id="surpriseModal">
-        <div class="modal-content">
+        <div class="modal-content" id="modalContentBox">
             <h2 id="modalTitle">💙 Surprise Note 💙</h2>
             
             <div class="modal-img-container" id="modalImgContainer">
@@ -416,7 +418,7 @@
     </div>
 
     <script>
-        // --- Live Canvas Background Particles ---
+        // --- Live Particle Animation Background ---
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -479,7 +481,7 @@
         }
         animate();
 
-        // --- Live Countdown to October 8 with Fireworks Trigger ---
+        // --- Live Countdown to October 8 with Auto Popup ---
         let hasCelebrated = false;
 
         function updateCountdown() {
@@ -500,7 +502,7 @@
                 
                 if (!hasCelebrated) {
                     hasCelebrated = true;
-                    triggerFireworks();
+                    triggerBirthdaySurprise();
                 }
                 return;
             }
@@ -518,20 +520,43 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // --- Trigger Birthday Fireworks & Auto Popup Message ---
+        function triggerBirthdaySurprise() {
+            triggerFireworks();
+
+            // Set up Modal with the Special Taglish Message
+            document.getElementById('modalTitle').innerText = "🎉 HAPPY BIRTHDAY ZOE! 🎉";
+            document.getElementById('modalImgContainer').style.display = 'none'; // Tago lang ang image para focused sa text
+
+            const specialMessage = `
+                <p style="margin-bottom:10px;"><strong>Naisip ko sanang gumawa ng super dramatic na greeting...</strong></p>
+                <p style="margin-bottom:10px;">Kaso naisip ko, simpleng pagkakaroon pa lang sa'yo sa araw-araw ko, sapat na para maging maganda ang day ko. Dijoke HAHAHA, pero totoo! 😄✨</p>
+                <p>I’m just super grateful for you. You somehow always find a way to cross my mind, and I love that. I hope this year brings you all the happiness and success you deserve. Stay pretty, and remember na cheerleader mo ako palagi. Enjoy your day! 💙</p>
+            `;
+            
+            document.getElementById('modalText').innerHTML = specialMessage;
+
+            const modalContentBox = document.getElementById('modalContentBox');
+            modalContentBox.classList.add('countdown-finish-modal');
+
+            document.getElementById('surpriseModal').style.display = 'flex';
+            burstBlueHearts();
+        }
+
         // --- Confetti & Fireworks Function ---
         function triggerFireworks() {
-            var duration = 5 * 1000;
+            var duration = 6 * 1000;
             var animationEnd = Date.now() + duration;
-            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+            var defaults = { startVelocity: 35, spread: 360, ticks: 60, zIndex: 1000 };
 
             var interval = setInterval(function() {
                 var timeLeft = animationEnd - Date.now();
                 if (timeLeft <= 0) {
                     return clearInterval(interval);
                 }
-                var particleCount = 50 * (timeLeft / duration);
+                var particleCount = 60 * (timeLeft / duration);
                 confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#38bdf8', '#818cf8', '#c084fc'] }));
-                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#38bdf8', '#38bdf8', '#ffffff'] }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#38bdf8', '#ffffff', '#f472b6'] }));
             }, 250);
         }
 
@@ -573,6 +598,9 @@
             const data = surprises[id];
             document.getElementById('modalTitle').innerText = data.title;
             
+            const modalContentBox = document.getElementById('modalContentBox');
+            modalContentBox.classList.remove('countdown-finish-modal'); // Standard style para sa icons
+
             const imgElem = document.getElementById('modalImg');
             imgElem.src = data.image;
             imgElem.onerror = function() {
