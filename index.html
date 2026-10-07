@@ -481,13 +481,20 @@
         }
         animate();
 
-        // --- Live Countdown to October 8 with Auto Popup ---
+        // --- Live Countdown to Next Year's October 8 (2027) ---
         let hasCelebrated = false;
 
         function updateCountdown() {
             const now = new Date();
             let currentYear = now.getFullYear();
+            
+            // Set initial target date for October 8
             let targetDate = new Date(`October 8, ${currentYear} 00:00:00`);
+
+            // If current date is past or at October 8, countdown to NEXT year's October 8
+            if (now >= targetDate) {
+                targetDate = new Date(`October 8, ${currentYear + 1} 00:00:00`);
+            }
 
             const diff = targetDate - now;
 
@@ -526,7 +533,7 @@
 
             // Set up Modal with the Special Taglish Message
             document.getElementById('modalTitle').innerText = "🎉 HAPPY BIRTHDAY ZOE! 🎉";
-            document.getElementById('modalImgContainer').style.display = 'none'; // Tago lang ang image para focused sa text
+            document.getElementById('modalImgContainer').style.display = 'none';
 
             const specialMessage = `
                 <p style="margin-bottom:10px;"><strong>Naisip ko sanang gumawa ng super dramatic na greeting...</strong></p>
@@ -599,7 +606,7 @@
             document.getElementById('modalTitle').innerText = data.title;
             
             const modalContentBox = document.getElementById('modalContentBox');
-            modalContentBox.classList.remove('countdown-finish-modal'); // Standard style para sa icons
+            modalContentBox.classList.remove('countdown-finish-modal');
 
             const imgElem = document.getElementById('modalImg');
             imgElem.src = data.image;
